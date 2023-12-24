@@ -1,7 +1,7 @@
 //setup for send OTP to the mail
 const nodemailer = require("nodemailer");
 
-const mailSender = async (mail, title, body) => {
+const mailSender = async (email, title, body) => {
     try{
         let transporter = nodemailer.createTransport({
             host:process.env.MAIL_HOST,

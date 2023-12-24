@@ -28,7 +28,7 @@ exports.auth = async(req, res, next) => {
             //verification-issue
             return res.status(401).json({
                 success:false,
-                message:'false is invalid',
+                message:'Token is invalid',
             });
         }
         next();
@@ -45,7 +45,7 @@ exports.auth = async(req, res, next) => {
 //isStudent
 exports.isStudent = async(req, res, next) => {
     try{
-        if(req,user.accountType !== "Student") {
+        if(req.user.accountType !== "Student") {
             return res.status(401).json({
                 success:false,
                 message:'This is a protected route for Students only',
@@ -64,7 +64,7 @@ exports.isStudent = async(req, res, next) => {
 //isInstructor
 exports.isInstructor = async(req, res, next) => {
     try{
-        if(req,user.accountType !== "Instructor") {
+        if(req.user.accountType !== "Instructor") {
             return res.status(401).json({
                 success:false,
                 message:'This is a protected route for Instructor only',
@@ -84,7 +84,7 @@ exports.isInstructor = async(req, res, next) => {
 exports.isAdmin = async(req, res, next) => {
     try{
         console.log("Printing AccountType ", req.user.accountType);
-        if(req,user.accountType !== "Admin") {
+        if(req.user.accountType !== "Admin") {
             return res.status(401).json({
                 success:false,
                 message:'This is a protected route for Admin only',

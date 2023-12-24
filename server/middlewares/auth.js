@@ -8,7 +8,7 @@ exports.auth = async(req, res, next) => {
         //extract token
         const token = req.cookies.token 
                         || re.body.token 
-                        || req.header("Authorization").replace("Bearer, ", "");
+                        || req.header("Authorization").replace("Bearer ", "");
 
         //if token missing, then return response
         if(!token) {
@@ -24,7 +24,7 @@ exports.auth = async(req, res, next) => {
             console.log(decode);
             req.user = decode;
         }
-        catch(error){
+        catch(err){
             //verification-issue
             return res.status(401).json({
                 success:false,
@@ -57,7 +57,7 @@ exports.isStudent = async(req, res, next) => {
         return res.status(500).json({
             success:false,
             message:'User role cannot be erified, please try again',
-    });
+    })
 }
 }
 
@@ -95,7 +95,7 @@ exports.isAdmin = async(req, res, next) => {
     catch(error){
         return res.status(500).json({
             success:false,
-            message:'User role cannot be erified, please try again',
+            message:'User role cannot be verified, please try again',
     });
 }
 }

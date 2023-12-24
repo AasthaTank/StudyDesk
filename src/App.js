@@ -10,7 +10,24 @@ function App() {
       
       <Routes>
         <Route path="/" element={<Home/>} />
-      </Routes>
+        <Route
+            path="signup"
+            element={
+              <OpenRoute>
+                <Signup />
+              </OpenRoute>
+            } 
+        />
+        <Route
+            path="login"
+            element={
+              <OpenRoute>
+                <Login />
+              </OpenRoute>
+            }
+        />
+    </Routes>
+
     </div>
   );
 }

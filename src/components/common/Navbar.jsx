@@ -9,9 +9,22 @@ import ProfileDropDown from '../core/Auth/ProfileDropDown'
 import { apiConnector } from '../../services/apiconnector'
 import { categories } from '../../services/apis'
 import { useState } from 'react'
+import { IoIosArrowDown } from "react-icons/io";
+
+
+const subLinks = [
+    {
+        title: "Python",
+        link:"/catalog/python"
+    },
+    {
+        title:"Web-Dev",
+        links:"/catalog/web-development"
+    },
+];
 
 const Navbar = () => {
-
+    console.log("Printing base url: ",process.env.REACT_APP_BASE_URL);
       const {token} = useSelector ( (state) => state.auth);
       const {user} = useSelector ( (state) => state.profile);
       const {totalItems} = useSelector ( (state) => state.cart);
@@ -33,8 +46,6 @@ const Navbar = () => {
       useEffect( () => {
         fetchSublinks();
     }, [] )
-
-
   
     const matchRoutes = (route) => {
         return matchPath({path:route}, location.pathname);
@@ -57,8 +68,34 @@ const Navbar = () => {
                          <li key={index}>
                             {
                                 link.title === "Catalog" ? (
-                                    <div>
+                                    <div className='relative flex items-center gap-2 group'>
                                         <p>{link.title}</p>
+                                        <IoIosArrowDown />
+
+                                        <div className='invisible absolute left-[50%] 
+                                        translate-x-[-50%] translate-y-[80%] top-[50%]
+                                        flex flex-col rounded-md bg-richblack-5 p-4 text-richblack-900
+                                        opacity-0 transition-all duration-200 group-hover:visible 
+                                        group-hover:opacity-100 lg:w-[300px]'>
+
+                                        <div className='absolute left-[50%] top-0 
+                                        translate-y-[-45%]  translate-x-[80%] h-6 w-6 rotate-45 rounded bg-richblack-5'>
+                                        </div>
+
+                                        {
+                                            subLinks.length ? (
+                                                    subLinks.map( (subLink, index) => (
+                                                        <Link to={`${subLink.link}`} key={index} >
+                                                            <p>{subLink.title}</p>
+                                                        </Link>
+                                                    ) )
+                                                
+                                            ) : (<div> </div>)
+                                        } 
+
+                                        </div>
+
+
                                     </div>
                                 ) : (
                                     

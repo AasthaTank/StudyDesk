@@ -34,14 +34,12 @@ const InstructorSection = () => {
                     Start learning today
                     <FaArrowRight/>
                 </div>
-
             </CTAButton>
             </div>
             
         </div>
-
+        
       </div>
-
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Logo1 from "../../../assets/TimeLineLogo/Logo1.svg"
 import Logo2 from "../../../assets/TimeLineLogo/Logo2.svg"
 import Logo3 from "../../../assets/TimeLineLogo/Logo3.svg"
@@ -28,7 +29,8 @@ const timeline= [
     Description: "Fully committed to the success company",
   },
 
-]
+];
+
 const TimelineSection = () => {
   return (
     <div>
@@ -57,11 +59,11 @@ const TimelineSection = () => {
 
         {/* {right part} */}
         
-        
         <div className='relative shadow-blue-200'>
+          
           <img src={timelineImage}
             alt="timelineImage"
-            className='shadow-blue-300 object-cover h-fit'
+            className='shadow-white object-cover h-fit'
           />
 
           <div className='absolute bg-caribbeangreen-700 flex flex-row text-white uppercase py-6 px-5

@@ -11,7 +11,7 @@ import { categories } from '../../services/apis'
 import { useState } from 'react'
 import { IoIosArrowDown } from "react-icons/io";
 
-const subLinks = [
+const sublinks = [
     {
         title: "Python",
         link:"/catalog/python"

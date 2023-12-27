@@ -70,7 +70,7 @@ const VerifyEmail = () => {
                     </div>
 
                     <button 
-                    onClick={ () => dispatch (sendOtp(signupData.email))}>
+                    onClick={ () => dispatch (sendOtp(signupData.email, navigate))}>
                         Resend it
                     </button>
 

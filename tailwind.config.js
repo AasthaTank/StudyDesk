@@ -17,6 +17,8 @@ module.exports = {
       purple: "	#bdb4ff",
       purpleAnime: "#7a4dce",
       neon:"#eaff99",
+      "rose-400": "#EB5286",
+      "orange-300": "#F97316",
       richblack: {
         5: "#F1F2FF",
         25: "#DBDDEA",

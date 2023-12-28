@@ -33,7 +33,7 @@ const Navbar = () => {
 
       const fetchSublinks = async() => {
             try{
-                const result = await apiConnector("Get", categories.CATEGORIES_API );
+                const result = await apiConnector("GET", categories.CATEGORIES_API );
                 console.log("Printing Sublinks Result:", result);
                 setSubLinks(result.data.data);
             }

@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import IconBtn from '../../common/IconBtn'
 
-
 const MyProfile = () => {
 
     const {user} = useSelector((state) => state.profile)

@@ -148,10 +148,8 @@ const Home = () => {
 
                     />
                 </div>
-
                 
                 <ExploreMore/>
-
             </div>
 
             {/* section 2 */}
@@ -174,8 +172,6 @@ const Home = () => {
                                 </div>
                             </CTAButton>
                        </div>
-
-
                    
                     </div> 
                 

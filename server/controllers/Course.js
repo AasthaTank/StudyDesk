@@ -94,7 +94,7 @@ exports.createCourse = async (req, res) => {
 			{ new: true }
 		);
 		// Add the new course to the Categories
-		await Category.findByIdAndUpdate(
+		await category.findByIdAndUpdate(
 			{ _id: category },
 			{
 				$push: {

@@ -16,15 +16,6 @@ const Dashboard = () => {
         )
     }
 
-
-    if(profileLoading || authLoading ) {
-        return (
-            <div className='mt-10'>
-                Loading...
-            </div>
-        )
-    }
-
   return (
     <div className='relative flex min-h-[calc(100vh-3.5rem)] bg-richblack-400'>
         <Sidebar />

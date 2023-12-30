@@ -4,9 +4,8 @@ import { sidebarLinks } from '../../../data/dashboard-links'
 import {logout} from "../../../services/operations/authAPI"
 import { useDispatch, useSelector } from 'react-redux'
 import SidebarLink  from './SidebarLink'
-import { VscSettingsGear, VscSignOut } from 'react-icons/vsc'
+import { VscSignOut } from 'react-icons/vsc'
 import { useNavigate } from 'react-router-dom'
-//import StatsComponent from '../AboutPage/Stats'
 import ConfirmationModal from '../../common/ConfirmationModal'
 
 const Sidebar = () => {
@@ -26,7 +25,7 @@ const Sidebar = () => {
     }
 
   return (
-    <div>
+    <div className='text-white'>
         <div className='flex min-w-[222px] flex-col border-r-[1px] border-r-richblack-700 
                 h-[calc[100vh-3.5rem]] bg-richblack-800 py-10 '>
                 <div className='flex flex-col'>

@@ -55,6 +55,7 @@ exports.createRating = async (req, res) => {
         return res.status(200).json({
             success:true,
             message:"Rating and Review created Successfully",
+            ratingReview,
         });
 
     }

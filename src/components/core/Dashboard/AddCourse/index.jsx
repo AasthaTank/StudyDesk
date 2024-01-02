@@ -1,4 +1,4 @@
-import RenderSteps from '../AddCourse/RenderSteps';
+import RenderSteps from "./RenderSteps"
 
 export default function AddCourse() {
     return ( 
@@ -7,7 +7,7 @@ export default function AddCourse() {
                 <div>
                     <h1>Add Course</h1>
                     <div>
-                        <RenderSteps/>
+                        <RenderSteps />
                     </div>
                 </div>
                 <div>

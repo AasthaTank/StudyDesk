@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const RequirementField = ({name, label, register, errors, setValue, getValue}) => {
+const RequirementField = ({name, label, register, errors, setValue, getValues}) => {
 
     const [requirement, setRequirement] = useState("");
     const [requirementList, setRequirementList]= useState([]);
@@ -8,7 +8,7 @@ const RequirementField = ({name, label, register, errors, setValue, getValue}) =
     useEffect (() => {
         register(name, {
             required:true,
-            validation: (value) => value.length > 0
+            //validation: (value) => value.length > 0
                 })
     },[])
 
@@ -19,7 +19,7 @@ const RequirementField = ({name, label, register, errors, setValue, getValue}) =
     const handleAddRequirement = () => {
         if(requirement) {
             setRequirementList([...requirementList, requirement]);
-            setRequirement("");   
+            //setRequirement("");   
         }
     }
 

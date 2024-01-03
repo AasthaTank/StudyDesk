@@ -30,7 +30,7 @@ const Navbar = () => {
     const {totalItems} = useSelector( (state) => state.cart )
     const location = useLocation();
 
-    const [ssubLinks, setSubLinks]  = useState([]);
+    const [subLinks, setSubLinks]  = useState([]);
 
     const fetchSublinks = async() => {
         try{
@@ -123,7 +123,7 @@ const Navbar = () => {
         <div className='flex gap-x-4 items-center'>
 
             {
-                user && user?.accountType != "Instructor" && (
+                user && user?.accountType !== "Instructor" && (
                     <Link to="/dashboard/cart" className='relative'>
                         <AiOutlineShoppingCart />
                         {

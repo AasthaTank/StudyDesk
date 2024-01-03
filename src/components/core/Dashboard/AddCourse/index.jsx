@@ -26,7 +26,7 @@ export default function AddCourse() {
             </div>
         </>
 
-        )
+    )
 }
 
 

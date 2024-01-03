@@ -119,17 +119,21 @@ const CourseInformationForm = () => {
         formData.append("whatYouWillLearn", data.courseBenefits);
         formData.append("category", data.courseCategory);
         formData.append("instructions", JSON.stringify(data.courseTitle));
-        formData.append("courseName", data.courseTitle);
-        formData.append("courseName", data.courseTitle);
+        //formData.append("courseName", data.courseTitle);
+        //formData.append("courseName", data.courseTitle);
         formData.append("status", COURSE_STATUS.DRAFT);
 
         setLoading(true);
+        console.log("BEFORE add course API call");
+        console.log("PRINTING FORMDATA", formData);
         const result = await addCourseDetails(formData, token);
         if(result) {
             setStep(2);
             dispatch(setCourse(result));
         } 
         setLoading(false);
+        console.log("PRINTING FORMDATA", formData);
+        console.log("PRINTING result", result);
 
     }
 
@@ -247,7 +251,9 @@ const CourseInformationForm = () => {
             />
             {
                 errors.courseBenefits && (
-                    <span>Benefits of the course are required**</span>
+                    <span>
+                        Benefits of the course are required**
+                    </span>
                 )
             }
         </div>
